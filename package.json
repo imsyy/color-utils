@@ -1,0 +1,42 @@
+{
+  "name": "color-utils",
+  "version": "1.0.0",
+  "description": "A library of easy-to-use image tools",
+  "homepage": "https://github.com/imsyy/color-utils#readme",
+  "bugs": {
+    "url": "https://github.com/imsyy/color-utils/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imsyy/color-utils.git"
+  },
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "format": "prettier --write .",
+    "build": "tsc --project tsconfig.json",
+    "test": "jest --coverage"
+  },
+  "keywords": [
+    "utils"
+  ],
+  "author": "imsyy",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.14.2",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "prettier": "^3.3.2",
+    "ts-jest": "^29.1.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "@material/material-color-utilities": "^0.2.7",
+    "colorthief": "^2.4.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
