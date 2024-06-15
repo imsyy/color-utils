@@ -2,6 +2,7 @@ import { rgbToHex } from "../src/rgbToHex";
 import { rgbToHsl } from "../src/rgbToHsl";
 import { rgbToCmyk } from "../src/rgbToCmyk";
 import { rgbToHsv } from "../src/rgbToHsv";
+import { rgbToHwb } from "../src/rgbToHwb";
 
 // rgbToHex
 describe("rgbToHex", () => {
@@ -200,5 +201,48 @@ describe("rgbToHsv", () => {
       s: 100,
       v: 100,
     });
+  });
+});
+
+// rgbToHwb
+describe("rgbToHwb", () => {
+  it("should convert black correctly", () => {
+    expect(rgbToHwb(0, 0, 0)).toEqual({ h: 0, w: "0%", bk: "100%" });
+  });
+
+  it("should convert white correctly", () => {
+    expect(rgbToHwb(255, 255, 255)).toEqual({ h: 0, w: "100%", bk: "0%" });
+  });
+
+  it("should convert red correctly", () => {
+    expect(rgbToHwb(255, 0, 0)).toEqual({ h: 0, w: "0%", bk: "0%" });
+  });
+
+  it("should convert green correctly", () => {
+    expect(rgbToHwb(0, 255, 0)).toEqual({ h: 120, w: "0%", bk: "0%" });
+  });
+
+  it("should convert blue correctly", () => {
+    expect(rgbToHwb(0, 0, 255)).toEqual({ h: 240, w: "0%", bk: "0%" });
+  });
+
+  it("should convert grey correctly", () => {
+    expect(rgbToHwb(128, 128, 128)).toEqual({ h: 0, w: "50%", bk: "50%" });
+  });
+
+  it("should convert yellow correctly", () => {
+    expect(rgbToHwb(255, 255, 0)).toEqual({ h: 60, w: "0%", bk: "0%" });
+  });
+
+  it("should convert cyan correctly", () => {
+    expect(rgbToHwb(0, 255, 255)).toEqual({ h: 180, w: "0%", bk: "0%" });
+  });
+
+  it("should convert magenta correctly", () => {
+    expect(rgbToHwb(255, 0, 255)).toEqual({ h: 300, w: "0%", bk: "0%" });
+  });
+
+  it("should convert certain shades correctly", () => {
+    expect(rgbToHwb(102, 204, 51)).toEqual({ h: 100, w: "20%", bk: "20%" });
   });
 });

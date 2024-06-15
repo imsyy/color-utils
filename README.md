@@ -5,23 +5,25 @@ Some common color processing tools, color format conversion, image processing, e
 ## Install
 
 ```bash
-npm install color-utils
+npm install @imsyy/color-utils
 ```
 
 ## Usage
 
 ### Conversion
 
-| Method Name | Parameters                                   | Description                          |
-| ----------- | -------------------------------------------- | ------------------------------------ |
-| `rgbToHsv`  | (r: number, g: number, b: number)            | Converts RGB values to HSV.          |
-| `rgbToHex`  | (r: number, g: number, b: number)            | Converts RGB values to HEX format.   |
-| `rgbToHev`  | (r: number, g: number, b: number)            | Converts RGB values to HEV format.   |
-| `rgbToCmyk` | (r: number, g: number, b: number)            | Converts RGB values to CMYK format.  |
-| `hexToRgb`  | (hex: string)                                | Converts a HEX string to RGB values. |
-| `hsvToRgb`  | (h: number, s: number, v: number)            | Converts HSV values to RGB format.   |
-| `hslToRgb`  | (h: number, s: number, l: number)            | Converts HSL values to RGB format.   |
-| `cmykToRgb` | (c: number, m: number, y: number, k: number) | Converts CMYK values to RGB format.  |
+| Method Name | Parameters                                            | Description                          |
+| ----------- | ----------------------------------------------------- | ------------------------------------ |
+| `rgbToHsv`  | (r: number, g: number, b: number)                     | Converts RGB values to HSV.          |
+| `rgbToHex`  | (r: number, g: number, b: number)                     | Converts RGB values to HEX format.   |
+| `rgbToHev`  | (r: number, g: number, b: number)                     | Converts RGB values to HEV format.   |
+| `rgbToCmyk` | (r: number, g: number, b: number)                     | Converts RGB values to CMYK format.  |
+| `rgbToHwb`  | (r: number, g: number, b: number)                     | Converts RGB values to HWB format.   |
+| `hexToRgb`  | (hex: string)                                         | Converts a HEX string to RGB values. |
+| `hsvToRgb`  | (h: number, s: number, v: number)                     | Converts HSV values to RGB format.   |
+| `hslToRgb`  | (h: number, s: number, l: number)                     | Converts HSL values to RGB format.   |
+| `cmykToRgb` | (c: number, m: number, y: number, k: number)          | Converts CMYK values to RGB format.  |
+| `hwbToRgb`  | (h: number, w: string \| number, b: string \| number) | Converts HWB values to RGB format.   |
 
 **for example:**
 

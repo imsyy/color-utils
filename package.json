@@ -1,6 +1,6 @@
 {
   "name": "@imsyy/color-utils",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A library of easy-to-use image tools",
   "homepage": "https://github.com/imsyy/color-utils#readme",
   "bugs": {
@@ -12,6 +12,11 @@
   },
   "main": "dist/index.js",
   "type": "module",
+  "files": [
+    "LICENSE",
+    "README.md",
+    "dist/**/*"
+  ],
   "scripts": {
     "format": "prettier --write .",
     "build": "tsc --project tsconfig.json",
