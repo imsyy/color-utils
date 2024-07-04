@@ -12,9 +12,9 @@ type ColorType = {
  */
 export const getImageColor = async (
   img: string | HTMLImageElement,
-  quality: number = 5
+  quality: number = 5,
 ): Promise<ColorType | null> => {
-  let imgDom: HTMLImageElement;
+  let imgDom: HTMLImageElement | null = null;
   const colorThief = new ColorThief();
   try {
     if (typeof img === "string") {
@@ -25,8 +25,8 @@ export const getImageColor = async (
       imgDom.crossOrigin = "Anonymous";
       imgDom.src = img;
       await new Promise((resolve, reject) => {
-        imgDom.onload = () => resolve(true);
-        imgDom.onerror = (err) => reject(err);
+        imgDom!.onload = () => resolve(true);
+        imgDom!.onerror = (err) => reject(err);
       });
     } else if (img instanceof HTMLImageElement) {
       imgDom = img;
@@ -49,5 +49,12 @@ export const getImageColor = async (
   } catch (error) {
     console.error(error);
     return null;
+  } finally {
+    if (typeof img === "string" && imgDom) {
+      // 释放内存
+      imgDom.src = "";
+      imgDom.remove();
+      imgDom = null;
+    }
   }
 };
